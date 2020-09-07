@@ -1,4 +1,8 @@
 <%= render 'users/header' %>
 
-<h1>Blogs#new</h1>
-<p>Find me in app/views/blogs/new.html.erb</p>
+
+<h1>ブログ投稿</h1>
+<%= form_for(@blog) do |f| %>
+   <%=f.text_area :blog %>
+ <%= f.submit '投稿する' %>
+ <% end %>

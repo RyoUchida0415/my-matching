@@ -1,2 +1,12 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<%= render 'users/header' %>
+
+<div class="col-md-3">
+	<%= render 'users/sidebar' %>
+</div>
+
+<h1>会員詳細</h1>
+<%= attachment_image_tag @user, :image,format:'jpeg', fallback: "no_image.jpg", size:'300x300'  %>
+<%= @user.nickname %>
+<%= @user.age %>
+<%= @user.prefecture %>
+<%= @user.introduction %>
