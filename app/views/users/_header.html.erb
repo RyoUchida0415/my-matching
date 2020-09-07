@@ -1,8 +1,12 @@
 <header>
+	<!--ログインしたとき-->
 	<% if user_signed_in? %>
 	<ul class="nav navbar-nav navbar-right" >
 		<li class="aikonn">
 			<%= link_to 'about', homes_about_path, class: 'btn btn-primary' %>
+		</li>
+		<li class="aikonn">
+			<%= link_to 'マイページ', user_path(current_user), class: 'btn btn-primary' %>
 		</li>
 		<li class="aikonn">
 			<%= link_to 'やりとり', homes_about_path, class: 'btn btn-primary' %>
@@ -19,6 +23,7 @@
 	</ul>
 
 	<% else %>
+	<!--ログインしていないとき-->
 	<ul class="nav navbar-nav navbar-right" >
 		<li class="aikonn">
 			<%= link_to 'about', homes_about_path, class: 'btn btn-primary' %>
@@ -31,4 +36,5 @@
 		</li>
 	</ul>
 	<% end %>
+
 </header>

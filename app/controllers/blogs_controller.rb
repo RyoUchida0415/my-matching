@@ -8,13 +8,9 @@ class BlogsController < ApplicationController
 
 	def create
 		@blog = Blog.new(blog_params)
+		@blog.user_id = current_user.id
 		@blog.save
 		redirect_to users_path
-	end
-
-	def show
-		@blog = Blog.find(params[:id])
-
 	end
 
 	private
