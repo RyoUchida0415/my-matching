@@ -5,7 +5,7 @@ class RelationshipsController < ApplicationController
   def destroy
   end
 
-  def follow
+  def follower
   end
 
   def followed

@@ -1,2 +1,28 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<%= render 'users/header' %>
+
+<div class="col-md-3">
+	<%= render 'users/sidebar' %>
+</div>
+
+<!--カレントユーザならマイページ-->
+<% if user_signed_in? && @user == current_user %>
+<h1>マイページ</h1>
+<!--他のユーザなら会員詳細-->
+<% else %>
+<h1>会員詳細</h1>
+<% end %>
+
+<%= attachment_image_tag @user, :image,format:'jpeg', fallback: "no_image.jpg", size:'300x300'  %>
+<%= @user.nickname %>
+<%= @user.age %>
+<%= @user.prefecture %>
+<%= @user.introduction %>
+
+
+<div class="blog body">
+<% @blogs.each do |blog| %>
+<%= blog.created_at.strftime('%Y/%m/%d') %>
+<%= blog.blog %>
+<% end %>
+
+</div>

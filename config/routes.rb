@@ -6,4 +6,4 @@ Rails.application.routes.draw do
   resources :blogs
   resources :relationships
   root "homes#top"
-end
+  end

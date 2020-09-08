@@ -11,9 +11,4 @@ class BlogsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get create" do
-    get blogs_create_url
-    assert_response :success
-  end
-
 end
