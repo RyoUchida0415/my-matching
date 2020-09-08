@@ -1,6 +1,15 @@
-<h2>Follow Users</h2>
-<% if @users.count > 0 %>
-  <%= render '/users/index', users: @users %>
-<% else %>
-  <p>ユーザーはいません</p>
-<% end %>
+<%= render 'users/header' %>
+
+
+<div class="col-md-3">
+	<%= render 'users/sidebar', user: current_user %>
+</div>
+
+<div class="col-md-9">
+	<h2>フォロー会員</h2>
+	<% if @users.count > 0 %>
+	<%= render '/users/index', users: @users %>
+	<% else %>
+	<p>ユーザーはいません</p>
+	<% end %>
+</div>
