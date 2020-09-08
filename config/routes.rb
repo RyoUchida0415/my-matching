@@ -6,8 +6,4 @@ Rails.application.routes.draw do
   resources :blogs
   resources :relationships
   root "homes#top"
-<<<<<<< HEAD
   end
-=======
-end
->>>>>>> a6f97cf559db74f324d0664171ea5a5194d8c456
