@@ -7,7 +7,6 @@ Rails.application.routes.draw do
 		get 'follows' => 'relationships#follower', as: 'follows'
 		get 'followers' => 'relationships#followed', as: 'followers'
 	end
-	resources :relationships
 	resources :blogs
 	root "homes#top"
 end

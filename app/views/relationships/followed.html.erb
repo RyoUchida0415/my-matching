@@ -6,8 +6,10 @@
 
 <div class="col-md-9">
 	<h2>フォロワー会員</h2>
+	<!-- フォローが存在するならば -->
 	<% if @users.count > 0 %>
 	<%= render '/users/index', users: @users %>
+	<!-- フォローが存在しないならば -->
 	<% else %>
 	<p>ユーザーはいません</p>
 	<% end %>
