@@ -13,7 +13,16 @@
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
 
+<<<<<<< HEAD
 <br>
+=======
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+>>>>>>> a6f97cf559db74f324d0664171ea5a5194d8c456
 
   <div class="actions">
     <%= f.submit "ログイン" %>

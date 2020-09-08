@@ -1,0 +1,32 @@
+class ApplicationController < ActionController::Base
+	before_action :configure_permitted_parameters, if: :devise_controller?
+
+<<<<<<< HEAD
+	def after_sign_in_path_for(resource)
+		users_path
+	end
+
+	def after_sign_out_path_for(resource)
+=======
+def after_sign_in_path_for(resource)
+		users_path
+	end
+
+def after_sign_out_path_for(resource)
+>>>>>>> a6f97cf559db74f324d0664171ea5a5194d8c456
+		homes_top_path
+	end
+
+	protected
+<<<<<<< HEAD
+	def configure_permitted_parameters
+		devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :email, :age, :prefecture, :sex, :introduction, :image])
+	end
+end
+
+=======
+    def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
+    end
+end
+>>>>>>> a6f97cf559db74f324d0664171ea5a5194d8c456

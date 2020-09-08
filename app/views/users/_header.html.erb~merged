@@ -1,0 +1,55 @@
+<header>
+<<<<<<< HEAD
+	<!--ログインしたとき-->
+=======
+>>>>>>> a6f97cf559db74f324d0664171ea5a5194d8c456
+	<% if user_signed_in? %>
+	<ul class="nav navbar-nav navbar-right" >
+		<li class="aikonn">
+			<%= link_to 'about', homes_about_path, class: 'btn btn-primary' %>
+		</li>
+		<li class="aikonn">
+<<<<<<< HEAD
+			<%= link_to 'マイページ', user_path(current_user), class: 'btn btn-primary' %>
+		</li>
+		<li class="aikonn">
+=======
+>>>>>>> a6f97cf559db74f324d0664171ea5a5194d8c456
+			<%= link_to 'やりとり', homes_about_path, class: 'btn btn-primary' %>
+		</li>
+		<li class="aikonn">
+			<%= link_to 'ブログ投稿', new_blog_path, class: 'btn btn-primary' %>
+		</li>
+		<li class="aikonn">
+			<%= link_to '会員一覧', users_path, class: 'btn btn-primary' %>
+		</li>
+		<li class="aikonn">
+			<%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn btn-primary' %>
+		</li>
+	</ul>
+
+	<% else %>
+<<<<<<< HEAD
+	<!--ログインしていないとき-->
+=======
+>>>>>>> a6f97cf559db74f324d0664171ea5a5194d8c456
+	<ul class="nav navbar-nav navbar-right" >
+		<li class="aikonn">
+			<%= link_to 'about', homes_about_path, class: 'btn btn-primary' %>
+		</li>
+		<li class="aikonn">
+			<%= link_to 'ログイン',  new_user_session_path, class: 'btn btn-primary' %>
+		</li>
+		<li class="aikonn">
+			<%= link_to '新規登録', new_user_registration_path, class: 'btn btn-primary' %>
+		</li>
+<<<<<<< HEAD
+	</ul>
+	<% end %>
+
+</header>
+=======
+
+		<% end %>
+	</header>
+>>>>>>> a6f97cf559db74f324d0664171ea5a5194d8c456

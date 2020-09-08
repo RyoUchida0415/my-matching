@@ -16,4 +16,12 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+<<<<<<< HEAD
+=======
+  test "should get update" do
+    get users_update_url
+    assert_response :success
+  end
+
+>>>>>>> a6f97cf559db74f324d0664171ea5a5194d8c456
 end
