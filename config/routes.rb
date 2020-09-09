@@ -9,4 +9,7 @@ Rails.application.routes.draw do
 	end
 	resources :blogs
 	root "homes#top"
+
+	resources :messages, :only => [:create]
+	resources :rooms, :only => [:create, :show, :index]
 end

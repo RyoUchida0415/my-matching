@@ -28,6 +28,22 @@
 		<%= link_to 'フォローする', user_relationships_path(@user.id), method: :POST, class: "btn btn-success" %>
 		<% end %>
 		<% end %>
+
+		<!--メッセージボタン-->
+		<% if @user.id == current_user.id %>
+		<% else %>
+		<% if @isRoom == true %>
+		<%= link_to 'メッセージを送る',room_path(@roomId),class: "btn btn-primary" %>
+		<% else %>
+		<%= form_for @room do |f| %>
+		<%= fields_for @entry do |e| %>
+		<%= e.hidden_field :user_id, :value=> @user.id %>
+		<% end %>
+		<%= f.submit "チャットを始める",class: "btn btn-primary" %>
+		<% end %>
+		<% end %>
+		<% end %>
+
 	</div>
 
 	<!-- 投稿ブログ一覧 -->
