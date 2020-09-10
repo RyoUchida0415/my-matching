@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+        #別の性別を表示させるようにしたいが、現時点ではそもそもsexがnilだから話にならない
         if User.where(sex: 1)
   	     @users = User.where(sex: 2)
         else
