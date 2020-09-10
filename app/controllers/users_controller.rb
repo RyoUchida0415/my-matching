@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   def index
-  	@users = User.all
+        if User.where(sex: 1)
+  	     @users = User.where(sex: 2)
+        else
+          @users = User.where(sex: 1)
+        end
   end
 
   def show
