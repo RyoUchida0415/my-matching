@@ -10,18 +10,18 @@ class UsersController < ApplicationController
     #メッセージ機能
     @currentUserEntry=Entry.where(user_id: current_user.id)
     @userEntry=Entry.where(user_id: @user.id)
-    if @user.id == current_user.id
-    else
+    #現在ログインしているユーザーでないのならば
+    unless @user.id == current_user.id
       @currentUserEntry.each do |current_user|
         @userEntry.each do |user|
+          #roomが作成されているならば
           if current_user.room_id == user.room_id then
             @isRoom = true
             @roomId = current_user.room_id
           end
         end
       end
-      if @isRoom
-      else
+      unless @isRoom
         @room = Room.new
         @entry = Entry.new
       end

@@ -1,3 +1,58 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.left-message{
+	text-align: left;
+	position: relative;
+	padding: 10px;
+	left: 3px;
+	background-color: #fff3ad;
+	border-radius: 10px;
+	display: inline-block;     /* 横幅を自動で変更 */
+}
+
+/* beforeで三角を表現 */
+.left-message::before{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  left: -5px;
+  top: 3px;
+  border-right: 15px solid #fff3ad;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+
+.balloon{
+	text-align: right;
+}
+
+.right-message{
+	position: relative;
+	padding: 10px;
+	left: 5px;
+	background-color: #0888ff;
+	border-radius: 10px;
+	display: inline-block;     /* 横幅を自動で変更 */
+}
+
+/* beforeで三角を表現 */
+.right-message::before{
+content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  right: -5px;
+  top: 3px;
+  border-left: 15px solid #0888ff;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  }
+
+.center-message{
+	text-align: center;
+}
