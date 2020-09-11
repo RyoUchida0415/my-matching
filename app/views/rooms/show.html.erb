@@ -48,6 +48,7 @@
   <div class="center-message">
     <%= form_for @message do |f| %>
       <%= f.text_field :content, :placeholder => "メッセージを入力して下さい" , :size => 70 %>
+      <!--どのチャットルームのメッセージが判断するために、f.hidden_fieldで：room_idのバリューとして、そのチャットルームでのidを取得する-->
       <%= f.hidden_field :room_id, :value => @room.id %>
       <%= f.submit "送信",class: "btn btn-primary" %>
     <% end %>

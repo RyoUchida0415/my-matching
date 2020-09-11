@@ -32,28 +32,33 @@
 		<% end %>
 
 		<!--メッセージボタン-->
-		<% if @user.id == current_user.id %>
+		<!--現在ログインしているユーザーでないならば-->
+		<% unless @user.id == current_user.id %>
+			<!--相互フォローーしているならば-->
+			<% if (current_user.following?(@user)) && (@user.following? (current_user))  %>
+				<!--チャットルームが存在しているならば-->
+				<% if @isRoom == true %>
+					<%= link_to 'メッセージを送る',room_path(@roomId),class: "btn btn-primary" %>
+				<!--チャットルームが存在していないならば-->
 				<% else %>
-					<% if @isRoom == true %>
-						<%= link_to 'メッセージを送る',room_path(@roomId),class: "btn btn-primary" %>
-					<% else %>
-						<%= form_for @room do |f| %>
+					<%= form_for @room do |f| %>
 						<%= fields_for @entry do |entry| %>
-						<%= entry.hidden_field :user_id, :value=> @user.id %>
+							<%= entry.hidden_field :user_id, :value=> @user.id %>
 						<% end %>
-						<%= f.submit "チャットを始める",class: "btn btn-primary" %>
+							<%= f.submit "チャットを始める",class: "btn btn-primary" %>
 					<% end %>
 				<% end %>
+			<% end %>
 		<% end %>
 	</div>
 
 	<!-- 投稿ブログ一覧 -->
 	<h2>ブログ</h2>
-	<div class="blog body">
-		<% @blogs.each do |blog| %>
-		<%= blog.created_at.strftime('%Y/%m/%d') %>
-		<%= blog.blog %>
-		<% end %>
-	</div>
+		<div class="blog body">
+			<% @blogs.each do |blog| %>
+				<%= blog.created_at.strftime('%Y/%m/%d') %>
+				<%= blog.blog %>
+			<% end %>
+		</div>
 
 </div>
