@@ -1,16 +1,16 @@
 class UsersController < ApplicationController
   def index
-        #別の性別を表示させるようにしたいが、現時点ではそもそもsexがnilだから話にならない
-        if User.where(sex: 1)
-  	     @users = User.where(sex: 2)
-        else
-          @users = User.where(sex: 1)
+        #別の性別を表示させるようにしたい
+        if User.where(sex: true)
+          @users = User.where(sex: false)
+        elsif User.where(sex: false)
+          @users = User.where(sex: true)
         end
-  end
+      end
 
-  def show
-    @user = User.find(params[:id])
-    @blogs = Blog.where(user_id: @user.id)
+      def show
+        @user = User.find(params[:id])
+        @blogs = Blog.where(user_id: @user.id)
 
     #メッセージ機能
     @currentUserEntry=Entry.where(user_id: current_user.id)
