@@ -34,7 +34,7 @@
 		<!--メッセージボタン-->
 		<!--現在ログインしているユーザーでないならば-->
 		<% unless @user.id == current_user.id %>
-			<!--相互フォローーしているならば-->
+			<!--相互フォローーしているならば(マッチングが成立しているならば）-->
 			<% if (current_user.following?(@user)) && (@user.following? (current_user))  %>
 				<!--チャットルームが存在しているならば-->
 				<% if @isRoom == true %>

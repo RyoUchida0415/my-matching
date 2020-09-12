@@ -13,17 +13,16 @@
     <th>都道府県</th>
     <th><%= user.prefecture %></th>
   </tr>
-
-  <tr>
-    <th>フォロー数</th>
-    <th><%= link_to user.follower.count, user_follows_path(user) %></th>
-  </tr>
-  <tr>
-    <th>フォロワー数</th>
-    <th><%= link_to user.followed.count, user_followers_path(user) %></th>
-  </tr>
-  <tr>
     <th>introduction</th>
     <th><%= user.introduction %></th>
+  </tr>
+  <tr>
+    <th><%= link_to "マッチング成立", user_matches_path(user), class: 'btn btn-primary'%></th>
+  </tr>
+  <tr>
+    <th><%= link_to "フォロー" , user_follows_path(user), class: 'btn btn-primary' %></th>
+  </tr>
+  <tr>
+    <th><%= link_to "フォロワー", user_followers_path(user), class: 'btn btn-primary'%></th>
   </tr>
 </table>
