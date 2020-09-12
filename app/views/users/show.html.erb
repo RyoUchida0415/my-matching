@@ -11,16 +11,26 @@
 	<!--他のユーザなら会員詳細-->
 	<% else %>
 	<h1>会員詳細</h1>
+	<p>相互フォローが成立するとメッセージが送れるようになります</p>
 	<% end %>
 
 	<!--会員情報-->
 	<%= attachment_image_tag @user, :image,format:'jpeg', fallback: "no_image.jpg", size:'300x300'  %>
 	<div>
-
-		<%= @user.nickname %>
-		<%= @user.age %>歳
-		<%= @user.prefecture %>
-		<%= @user.introduction %>
+		<table>
+			<tr>
+				<th><%= @user.nickname %></th>
+			</tr>
+			<tr>
+				<th><%= @user.age %>歳</th>
+			</tr>
+			<tr>
+				<th><%= @user.prefecture %></th>
+			</tr>
+			<tr>
+				<th><%= @user.introduction %></th>
+			</tr>
+		</table>
 
 		<!-- フォローボタン -->
 		<% if @current_user != @user %>
@@ -54,11 +64,10 @@
 
 	<!-- 投稿ブログ一覧 -->
 	<h2>ブログ</h2>
-		<div class="blog body">
 			<% @blogs.each do |blog| %>
+			<div class="blog body">
 				<%= blog.created_at.strftime('%Y/%m/%d') %>
 				<%= blog.blog %>
+				</div>
 			<% end %>
-		</div>
-
 </div>

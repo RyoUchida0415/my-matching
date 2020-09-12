@@ -17,7 +17,7 @@
       <% if message.user != current_user %>
         <!--メッセージを左に寄せる-->
             <div>
-                <a href="/users/<%= message.user_id %>"><%= attachment_image_tag message.user, :image,format:'jpeg', fallback: "no_image.jpg", size:'30x30'  %><%= message.user.nickname %>
+                <a href="/users/<%= message.user_id %>"><%= attachment_image_tag message.user, :image,format:'jpeg', fallback: "no_image.jpg", size:'40x40'  %><%= message.user.nickname %>
                 </a>
               <div class="left-message">
                 <strong><%= message.content %></strong>

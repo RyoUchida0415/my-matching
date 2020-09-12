@@ -1,28 +1,35 @@
-<h2>プロフィール</h2>
-<table class='table'>
-  <tr><%= attachment_image_tag(user, :image, fallback: "no_image.jpg",size:'300x300' ) %></tr>
-  <tr>
-    <th>ニックネーム</th>
-    <th><%= user.nickname %></th>
-  </tr>
-   <tr>
-    <th>年齢</th>
-    <th><%= user.age %>歳</th>
-  </tr>
-   <tr>
-    <th>都道府県</th>
-    <th><%= user.prefecture %></th>
-  </tr>
-    <th>introduction</th>
-    <th><%= user.introduction %></th>
-  </tr>
-  <tr>
-    <th><%= link_to "マッチング成立", user_matches_path(user), class: 'btn btn-primary'%></th>
-  </tr>
-  <tr>
-    <th><%= link_to "フォロー" , user_follows_path(user), class: 'btn btn-primary' %></th>
-  </tr>
-  <tr>
-    <th><%= link_to "フォロワー", user_followers_path(user), class: 'btn btn-primary'%></th>
-  </tr>
-</table>
+<div class="sidebar">
+  <h2>プロフィール</h2>
+    <table class='table'>
+      <tr>
+        <div class="sidebar-aikonn">
+          <%= attachment_image_tag(user, :image, fallback: "no_image.jpg",size:'300x300' ) %>
+        </div>
+      </tr>
+      <br>
+      <tr>
+        <th>ニックネーム</th>
+        <th><%= user.nickname %></th>
+      </tr>
+       <tr>
+        <th>年齢</th>
+        <th><%= user.age %>歳</th>
+      </tr>
+       <tr>
+        <th>都道府県</th>
+        <th><%= user.prefecture %></th>
+      </tr>
+        <th>introduction</th>
+        <th><%= user.introduction %></th>
+      </tr>
+      <tr>
+        <th><%= link_to "マッチング成立", user_matches_path(user), class: 'btn btn-primary'%></th>
+      </tr>
+      <tr>
+        <th><%= link_to "フォロー" , user_follows_path(user), class: 'btn btn-primary' %></th>
+      </tr>
+      <tr>
+        <th><%= link_to "フォロワー", user_followers_path(user), class: 'btn btn-primary'%></th>
+      </tr>
+    </table>
+</div>
