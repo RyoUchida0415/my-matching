@@ -1,13 +1,16 @@
 class UsersController < ApplicationController
   def index
-        #別の性別を表示させるようにしたい
-        #if User.where(:sex => 'true')
-          #@users = User.where(sex: 'false')
-        #elsif User.where(:sex => 'false')
-          #@users = User.where(sex: 'true')
-        #end
-        @users = User.all
+      #ログインしているユーザーの性別がtrue（男性）ならば（boolean型なのでtrueとわざわざ記述する必要なし）
+      if current_user.sex
+        #全ての女性会員を表示
+        @users = User.where(sex: false)
+      #ログインしているユーザーの性別がfalse（女性）ならば
+      else
+        #全ての男性会員を表示
+        @users = User.where(sex: true)
       end
+
+  end
 
       def show
         @user = User.find(params[:id])
