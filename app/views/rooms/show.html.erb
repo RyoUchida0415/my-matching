@@ -5,10 +5,9 @@
 </div>
 
 <div class="col-md-9">
-
+<div class="message-back">
   <h1>トーク</h1>
 
-  <hr>
   <!--メッセージが存在しているならば-->
   <% if @messages.present? %>
 
@@ -42,8 +41,7 @@
     <h3 class="text-center">メッセージはまだありません</h3>
   <% end %>
 
-  </hr>
-
+</div>
   <!--メッセージ投稿フォーム-->
   <div class="center-message">
     <%= form_for @message do |f| %>

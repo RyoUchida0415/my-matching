@@ -14,52 +14,57 @@
 	<p>相互フォローが成立するとメッセージが送れるようになります</p>
 	<% end %>
 
+ <hr>
 	<!--会員情報-->
-	<%= attachment_image_tag @user, :image,format:'jpeg', fallback: "no_image.jpg", size:'300x300'  %>
-	<div>
-		<table>
-			<tr>
-				<th><%= @user.nickname %></th>
-			</tr>
-			<tr>
-				<th><%= @user.age %>歳</th>
-			</tr>
-			<tr>
-				<th><%= @user.prefecture %></th>
-			</tr>
-			<tr>
-				<th><%= @user.introduction %></th>
-			</tr>
-		</table>
+	<div class="user-clearfix">
+		<div class="user-aikkon">
+			<%= attachment_image_tag @user, :image,format:'jpeg', fallback: "no_image.jpg", size:'300x300'  %>
+		</div>
+		<div class="user-information">
+			<table class="no">
+				<tr>
+					<h4><%= @user.nickname %></h4>
+				</tr>
+				<tr>
+					<h4><%= @user.age %>歳</h4>
+				</tr>
+				<tr>
+					<h4><%= @user.prefecture %></h4>
+				</tr>
+				<tr>
+					<h4><%= @user.introduction %></h4>
+				</tr>
+			</table>
 
-		<!-- フォローボタン -->
-		<% if @current_user != @user %>
-			<% if current_user.following?(@user) %>
-				<%= link_to 'フォロー外す', user_relationships_path(@user.id), method: :delete, class: "btn btn-primary" %>
-			<% else %>
-				<%= link_to 'フォローする', user_relationships_path(@user.id), method: :POST, class: "btn btn-success" %>
-			<% end %>
-		<% end %>
-
-		<!--メッセージボタン-->
-		<!--現在ログインしているユーザーでないならば-->
-		<% unless @user.id == current_user.id %>
-			<!--相互フォローーしているならば(マッチングが成立しているならば）-->
-			<% if (current_user.following?(@user)) && (@user.following? (current_user))  %>
-				<!--チャットルームが存在しているならば-->
-				<% if @isRoom == true %>
-					<%= link_to 'メッセージを送る',room_path(@roomId),class: "btn btn-primary" %>
-				<!--チャットルームが存在していないならば-->
+			<!-- フォローボタン -->
+			<% if @current_user != @user %>
+				<% if current_user.following?(@user) %>
+					<%= link_to 'フォロー外す', user_relationships_path(@user.id), method: :delete, class: "btn btn-primary" %>
 				<% else %>
-					<%= form_for @room do |f| %>
-						<%= fields_for @entry do |entry| %>
-							<%= entry.hidden_field :user_id, :value=> @user.id %>
+					<%= link_to 'フォローする', user_relationships_path(@user.id), method: :POST, class: "btn btn-success" %>
+				<% end %>
+			<% end %>
+
+			<!--メッセージボタン-->
+			<!--現在ログインしているユーザーでないならば-->
+			<% unless @user.id == current_user.id %>
+				<!--相互フォローーしているならば(マッチングが成立しているならば）-->
+				<% if (current_user.following?(@user)) && (@user.following? (current_user))  %>
+					<!--チャットルームが存在しているならば-->
+					<% if @isRoom == true %>
+						<%= link_to 'メッセージを送る',room_path(@roomId),class: "btn btn-warning" %>
+					<!--チャットルームが存在していないならば-->
+					<% else %>
+						<%= form_for @room do |f| %>
+							<%= fields_for @entry do |entry| %>
+								<%= entry.hidden_field :user_id, :value=> @user.id %>
+							<% end %>
+								<%= f.submit "チャットを始める",class: "btn btn-primary" %>
 						<% end %>
-							<%= f.submit "チャットを始める",class: "btn btn-primary" %>
 					<% end %>
 				<% end %>
 			<% end %>
-		<% end %>
+		</div>
 	</div>
 
 	<!-- 投稿ブログ一覧 -->
