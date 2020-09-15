@@ -1,46 +1,64 @@
 User.create!(
-   nickname: 'ふーたろう',
-   email: '1@1',
-   age:'27',
-   prefecture:'1',
-   sex:'true',
-   introduction:'111111,'
-   encrypted_password:'111111',
-   password_confirmation:'111111'
-
-   nickname: 'みーちゃん',
-   email: '2@2',
-   age:'20',
-   prefecture:'26',
-   sex:'false',
-   introduction:'222222',
-   encrypted_password:'222222',
-   password_confirmation:'222222'
-
-   nickname: '亜希子',
-   email: '3@3',
-   age:'27',
-   prefecture:'27',
-   sex:'false',
-   introduction:'333333',
-   encrypted_password:'333333',
-   password_confirmation:'333333'
-
-   nickname: '和夫',
-   email: '4@4',
-   age:'26',
-   prefecture:'27',
-   sex:'true',
-   introduction:'444444',
-   encrypted_password:'444444',
-   password_confirmation:'444444'
-
-   nickname: 'みな',
-   email: '5@5',
-   age:'28',
-   prefecture:'28',
-   sex:'false',
-   introduction:'555555',
-   encrypted_password:'555555',
-   password_confirmation:'555555'
+   [
+      {
+      nickname:'ふーたろう',
+      email:'1@1',
+      age:'27',
+      prefecture:'大阪府',
+      sex:'true',
+      introduction:'よろしく',
+      image: File.open('./app/assets/images/man1.jpg'),
+      password:'111111',
+      },
+      {
+      nickname:'みーちゃん',
+      email:'2@2',
+      age:'20',
+      prefecture:'京都府',
+      sex:'false',
+      introduction:'よろしく',
+      image: File.open('./app/assets/images/woman1.jpg'),
+      password:'222222',
+      },
+      {
+      nickname:'亜希子',
+      email:'3@3',
+      age:'27',
+      prefecture:'大阪府',
+      sex:'false',
+      introduction:'よろしく',
+      image: File.open('./app/assets/images/woman2.jpg'),
+      password:'333333',
+      },
+      {
+      nickname:'和夫',
+      email:'4@4',
+      age:'26',
+      prefecture:'京都府',
+      sex:'true',
+      introduction:'よろしく',
+      image: File.open('./app/assets/images/man2.jpg'),
+      password:'444444',
+      },
+      {
+      nickname:'みな',
+      email:'5@5',
+      age:'28',
+      prefecture:'兵庫県',
+      sex:'false',
+      introduction:'よろしく',
+      image: File.open('./app/assets/images/woman3.jpg'),
+      password:'555555',
+      },
+      {
+      nickname:'ジニー',
+      email:'6@6',
+      age:'28',
+      prefecture:'奈良県',
+      sex:'true',
+      introduction:'よろしく',
+      image: File.open('./app/assets/images/man3.jpg'),
+      password:'666666',
+      }
+   ]
 )
