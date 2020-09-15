@@ -8,6 +8,7 @@
 	<h2>会員一覧</h2>
 	<hr>
 		<% @users.each do |user| %>
+		<div class="one-user">
 			<%= link_to user_path(user) do %>
 				<%= attachment_image_tag user, :image,format:'jpeg', fallback: "no_image.jpg", size:'100x100'  %>
 			<% end %>
@@ -17,5 +18,6 @@
 			<div>
 				<%= user.introduction %>
 			</div>
+		</div>
 		<% end %>
 </div>
