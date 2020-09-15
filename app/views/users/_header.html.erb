@@ -1,7 +1,7 @@
 <header>
 	<div class="logo">
-	  <%= link_to root_path do %>
-      <h1>My-matching</h1>
+	  <%= link_to root_path , data: {"turbolinks" => false} do %>
+      <h1>my-matching</h1>
       <% end %>
   </div>
 	<!--ログインしたとき-->
@@ -20,7 +20,7 @@
 			<%= link_to '会員一覧', users_path %>
 		</li>
 		<li class="aikonn">
-			<%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+			<%= link_to 'ログアウト', destroy_user_session_path, method: :delete , data: {"turbolinks" => false}%>
 		</li>
 	</ul>
 

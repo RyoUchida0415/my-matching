@@ -7,10 +7,10 @@
 <div class="col-md-9">
 	<!--カレントユーザならマイページ-->
 	<% if user_signed_in? && @user == current_user %>
-	<h1>マイページ</h1>
+	<h2>マイページ</h2>
 	<!--他のユーザなら会員詳細-->
 	<% else %>
-	<h1>会員詳細</h1>
+	<h2>会員詳細</h2>
 	<p>相互フォローが成立するとメッセージが送れるようになります</p>
 	<% end %>
 
@@ -21,18 +21,18 @@
 			<%= attachment_image_tag @user, :image,format:'jpeg', fallback: "no_image.jpg", size:'300x300'  %>
 		</div>
 		<div class="user-information">
-			<table class="no">
+			<table>
 				<tr>
-					<h4><%= @user.nickname %></h4>
+					<td><%= @user.nickname %></td>
 				</tr>
 				<tr>
-					<h4><%= @user.age %>歳</h4>
+					<td><%= @user.age %>歳</td>
 				</tr>
 				<tr>
-					<h4><%= @user.prefecture %></h4>
+					<td><%= @user.prefecture %></td>
 				</tr>
 				<tr>
-					<h4><%= @user.introduction %></h4>
+					<td><%= @user.introduction %></td>
 				</tr>
 			</table>
 
@@ -52,14 +52,14 @@
 				<% if (current_user.following?(@user)) && (@user.following? (current_user))  %>
 					<!--チャットルームが存在しているならば-->
 					<% if @isRoom == true %>
-						<%= link_to 'メッセージを送る',room_path(@roomId),class: "btn btn-warning" %>
+						<%= link_to 'メッセージを送る',room_path(@roomId),class: "btn btn-info" %>
 					<!--チャットルームが存在していないならば-->
 					<% else %>
 						<%= form_for @room do |f| %>
 							<%= fields_for @entry do |entry| %>
 								<%= entry.hidden_field :user_id, :value=> @user.id %>
 							<% end %>
-								<%= f.submit "チャットを始める",class: "btn btn-primary" %>
+								<%= f.submit "チャットを始める",class: "btn btn-info" %>
 						<% end %>
 					<% end %>
 				<% end %>
@@ -69,6 +69,7 @@
 
 	<!-- 投稿ブログ一覧 -->
 	<h2>ブログ</h2>
+		 <hr>
 			<% @blogs.each do |blog| %>
 			<div class="blog body">
 				<%= blog.created_at.strftime('%Y/%m/%d') %>

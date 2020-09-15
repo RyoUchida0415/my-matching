@@ -5,7 +5,7 @@
 </div>
 
 <div class="col-md-9">
-	<h1>会員一覧</h1>
+	<h2>会員一覧</h2>
 	<hr>
 		<% @users.each do |user| %>
 			<%= link_to user_path(user) do %>
@@ -18,5 +18,4 @@
 				<%= user.introduction %>
 			</div>
 		<% end %>
-	</hr>
 </div>

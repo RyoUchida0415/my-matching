@@ -5,7 +5,7 @@ User.create!(
    prefecture:'1',
    sex:'true',
    introduction:'111111,'
-   password:'111111',
+   encrypted_password:'111111',
    password_confirmation:'111111'
 
    nickname: 'みーちゃん',
@@ -14,7 +14,7 @@ User.create!(
    prefecture:'26',
    sex:'false',
    introduction:'222222',
-   password:'222222',
+   encrypted_password:'222222',
    password_confirmation:'222222'
 
    nickname: '亜希子',
@@ -23,7 +23,7 @@ User.create!(
    prefecture:'27',
    sex:'false',
    introduction:'333333',
-   password:'333333',
+   encrypted_password:'333333',
    password_confirmation:'333333'
 
    nickname: '和夫',
@@ -32,7 +32,7 @@ User.create!(
    prefecture:'27',
    sex:'true',
    introduction:'444444',
-   password:'444444',
+   encrypted_password:'444444',
    password_confirmation:'444444'
 
    nickname: 'みな',
@@ -41,6 +41,6 @@ User.create!(
    prefecture:'28',
    sex:'false',
    introduction:'555555',
-   password:'555555',
+   encrypted_password:'555555',
    password_confirmation:'555555'
 )
