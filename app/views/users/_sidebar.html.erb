@@ -1,29 +1,42 @@
-<h2>プロフィール</h2>
-<table class='table'>
-  <tr><%= attachment_image_tag(user, :image, fallback: "no_image.jpg",size:'300x300' ) %></tr>
-  <tr>
-    <th>ニックネーム</th>
-    <th><%= user.nickname %></th>
-  </tr>
-   <tr>
-    <th>年齢</th>
-    <th><%= user.age %>歳</th>
-  </tr>
-   <tr>
-    <th>都道府県</th>
-    <th><%= user.prefecture %></th>
-  </tr>
-
-  <tr>
-    <th>フォロー数</th>
-    <th><%= link_to user.follower.count, user_follows_path(user) %></th>
-  </tr>
-  <tr>
-    <th>フォロワー数</th>
-    <th><%= link_to user.followed.count, user_followers_path(user) %></th>
-  </tr>
-  <tr>
-    <th>introduction</th>
-    <th><%= user.introduction %></th>
-  </tr>
-</table>
+<div class="sidebar">
+  <h2>　　プロフィール</h2>
+    <hr>
+    <table class="table">
+      <tr>
+        <div class="sidebar-aikonn">
+          <%= attachment_image_tag(user, :image, fallback: "no_image.jpg",size:'300x300' ) %>
+        </div>
+      </tr>
+      <br>
+      <tr>
+        <td>ニックネーム</td>
+        <td><%= user.nickname %></td>
+      </tr>
+       <tr>
+        <td>年齢</td>
+        <td><%= user.age %>歳</td>
+      </tr>
+       <tr>
+        <td>都道府県</td>
+        <td><%= user.prefecture %></td>
+      </tr>
+        <td>自己紹介文</td>
+        <td><%= user.introduction %></td>
+      </tr>
+      <tr>
+        <td>
+            <%= link_to "マッチング成立", user_matches_path(user), class: 'btn btn-success'%>
+        </td>
+      </tr>
+      <tr>
+        <td>
+            <%= link_to "フォロー" , user_follows_path(user), class: 'btn btn-info' %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= link_to "フォロワー", user_followers_path(user), class: 'btn btn-primary'%>
+            </td>
+      </tr>
+    </table>
+</div>

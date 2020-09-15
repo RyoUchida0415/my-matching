@@ -5,9 +5,10 @@
 </div>
 
 <div class="col-md-9">
-	<h1>ブログ投稿</h1>
+	<h2>ブログ投稿</h2>
+	<hr>
 	<%= form_for(@blog) do |f| %>
-	<%=f.text_area :blog %>
-	<%= f.submit '投稿する' %>
+	<%=f.text_area :blog ,:placeholder => "今日はいい天気なので散歩しました" , :size => 500 %>
+	<%= f.submit '投稿する' ,class: "btn btn-info"%>
 	<% end %>
 </div>

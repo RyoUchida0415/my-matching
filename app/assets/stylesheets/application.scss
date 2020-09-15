@@ -16,3 +16,27 @@
 
 @import "bootstrap-sprockets";  /*ここを追加*/
 @import "bootstrap";            /*ここを追加*/
+
+
+header{
+    position:relative;
+	background-color: #EEEEEE;
+	height: 70px;
+}
+
+.aikonn {
+     position:absolute;
+     right:20px;
+     top:10px;
+
+}
+.logo{
+	position:absolute;
+	left:40px;
+	top:-10px;
+}
+
+.login-body{
+	text-align: center;
+	background-color: #EEFFFF;
+}

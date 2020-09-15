@@ -1,3 +1,32 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.sidebar{
+	background-color: #EEFFFF;
+	border-right: 2px solid #DDDDDD;
+}
+
+.sidebar-aikonn{
+	padding-left: 15px;
+	padding-top: 10px;
+}
+
+.image{
+	border-radius: 50%;
+}
+
+.user-clearfix::after{
+	content:"";
+	display: block;
+	clear: both;
+}
+
+.user-aikkon{
+	float: left;
+}
+
+.user-information{
+	padding: 70px  100px;
+	float: left;
+}

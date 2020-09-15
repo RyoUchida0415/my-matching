@@ -12,6 +12,9 @@ class User < ApplicationRecord
   has_many :following_user, through: :follower, source: :followed
   # 自分をフォローしている人
   has_many :follower_user, through: :followed, source: :follower
+  #メッセージ機能
+  has_many :messages, dependent: :destroy
+  has_many :entries, dependent: :destroy
 
   #フォローする
   def follow(user_id)
@@ -28,6 +31,11 @@ class User < ApplicationRecord
     following_user.include?(user)
   end
 
+  #相互フォローでマッチング成立
+  def match
+    follower & followed
+  end
+
   enum prefecture:{
     "選択してください":0,
     北海道:1,青森県:2,岩手県:3,宮城県:4,秋田県:5,山形県:6,福島県:7,
@@ -40,12 +48,8 @@ class User < ApplicationRecord
     福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46,
     沖縄県:47
   }
-
   enum age:{
     "20":1,"21":2,"22":3,"23":4,"24":5,"25":6,"26":7,"27":8,"28":9,"29":10,"30":11,"31":12,"32":13,"33":14,"34":15,"35":16,"36":17,"37":18,"38":19,"39":20,"40":21,"41":22,"42":23,"45":24,"46":25,"47":26,"48":27,"49":28,"50":29
   }
 
-  enum sex:{
-    '男性': 1, '女性': 2
-  }
 end
