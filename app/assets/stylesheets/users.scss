@@ -3,17 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .sidebar{
-	background-color:#CBFFD3;
-	border: double black;
-	border-radius: 10px;
+	background-color: #EEFFFF;
+	border-right: solid #DDDDDD;
 }
 
-.sidebar-profile{
-	background-color:#FFFFAA;
-	border: double black;
-	border-radius: 50%;
-
-}
 .sidebar-aikonn{
 	padding-left: 15px;
 	padding-top: 10px;
@@ -21,7 +14,6 @@
 
 .image{
 	border-radius: 50%;
-	border: 3px solid #00cc00;
 }
 
 .user-clearfix::after{

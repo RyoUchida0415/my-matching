@@ -17,9 +17,10 @@
 @import "bootstrap-sprockets";  /*ここを追加*/
 @import "bootstrap";            /*ここを追加*/
 
+
 header{
     position:relative;
-	background-color:#C2EEFF;
+	background-color: #EEEEEE;
 	height: 70px;
 }
 
@@ -31,6 +32,12 @@ header{
 }
 .logo{
 	position:absolute;
-	left:30px;
-	top:8px;
+	left:40px;
+	top:-10px;
+}
+
+.login-body{
+	text-align: center;
+	background-color: #EEFFFF;
+
 }

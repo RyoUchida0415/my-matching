@@ -1,26 +1,26 @@
 <header>
 	<div class="logo">
 	  <%= link_to root_path do %>
-      <%= image_tag('icon2.jpg') %>
+      <h1>My-matching</h1>
       <% end %>
   </div>
 	<!--ログインしたとき-->
 	<% if user_signed_in? %>
 	<ul class="nav navbar-nav navbar-right" >
 		<li class="aikonn">
-			<%= link_to 'about', homes_about_path, class: 'btn btn-primary' %>
+			<%= link_to 'about', homes_about_path %>
 		</li>
 		<li class="aikonn">
-			<%= link_to 'マイページ', user_path(current_user), class: 'btn btn-warning' %>
+			<%= link_to 'マイページ', user_path(current_user) %>
 		</li>
 		<li class="aikonn">
-			<%= link_to 'ブログ投稿', new_blog_path, class: 'btn btn-info' %>
+			<%= link_to 'ブログ投稿', new_blog_path %>
 		</li>
 		<li class="aikonn">
-			<%= link_to '会員一覧', users_path, class: 'btn btn-success' %>
+			<%= link_to '会員一覧', users_path %>
 		</li>
 		<li class="aikonn">
-			<%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+			<%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
 		</li>
 	</ul>
 
@@ -29,13 +29,13 @@
 	<!--ログインしていないとき-->
 	<ul class="nav navbar-nav navbar-right" >
 		<li class="aikonn">
-			<%= link_to 'about', homes_about_path, class: 'btn btn-primary' %>
+			<%= link_to 'about', homes_about_path %>
 		</li>
 		<li class="aikonn">
-			<%= link_to 'ログイン',  new_user_session_path, class: 'btn btn-danger' %>
+			<%= link_to 'ログイン',  new_user_session_path %>
 		</li>
 		<li class="aikonn">
-			<%= link_to '新規登録', new_user_registration_path, class: 'btn btn-success' %>
+			<%= link_to '新規登録', new_user_registration_path %>
 		</li>
 	</ul>
 	<% end %>
