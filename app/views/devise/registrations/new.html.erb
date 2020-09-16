@@ -7,10 +7,10 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div>
-    <%= f.label :ニックネーム %><br />
+    <%= f.label :ニックネーム %><p>(後から変更可能です)</p>
     <%= f.text_field :nickname, autofocus: true %>
   </div>
-
+<br />
   <div>
     <%= f.label :メールアドレス%><br />
     <%= f.email_field :email, autofocus: true %>
@@ -20,28 +20,28 @@
     <%= f.label :年齢 %><p>(本アプリは２０〜５０歳までが対象です)</p>
     <%= f.select :age, User.ages.keys,{} %>
   </div>
-
+<br />
   <div>
-    <%= f.label :都道府県 %><br />
+    <%= f.label :都道府県 %><p>(後から変更可能です)</p>
     <%= f.select :prefecture, User.prefectures.keys,{} %>
   </div>
-
+<br />
   <div>
-    <%= f.label :性別 %><br />
+    <%= f.label :性別 %>
     <label><%= f.radio_button :sex, "true" %>男性</label>
     <label><%= f.radio_button :sex, "false" %>女性</label>
   </div>
-
+<br />
   <div>
-    <%= f.label :自己紹介文 %><br />
+    <%= f.label :自己紹介文 %><p>(後から変更可能です)</p>
     <%= f.text_area :introduction, size: "50x3",autofocus: true %>
   </div>
-
+<br />
   <div>
-    <%= f.label :プロフィール画像 %><br />
+    <%= f.label :プロフィール画像 %><br /><p>(後で設定可能です)</p>
     <%= f.attachment_field :image, style: "display: inline;" %>
   </div>
-  <br>
+  <br />
   <div>
     <%= f.label :パスワード %>
     <%= f.password_field :password, autocomplete: "new-password" %>

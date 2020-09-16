@@ -21,17 +21,21 @@
 			<%= attachment_image_tag @user, :image,format:'jpeg', fallback: "no_image.jpg", size:'300x300'  %>
 		</div>
 		<div class="user-information">
-			<table>
+			 <table class="table">
 				<tr>
+					<td>ニックネーム</td>
 					<td><%= @user.nickname %></td>
 				</tr>
 				<tr>
+       			    <td>年齢</td>
 					<td><%= @user.age %>歳</td>
 				</tr>
 				<tr>
+					<td>都道府県</td>
 					<td><%= @user.prefecture %></td>
 				</tr>
 				<tr>
+					<td>自己紹介文</td>
 					<td><%= @user.introduction %></td>
 				</tr>
 			</table>
@@ -63,6 +67,11 @@
 						<% end %>
 					<% end %>
 				<% end %>
+			<% end %>
+			<!--カレントユーザなら編集ボタン-->
+			<% if user_signed_in? && @user == current_user %>
+				<%= link_to '編集する', edit_user_path(@user.id), class: "btn btn-primary" %>
+			<else>
 			<% end %>
 		</div>
 	</div>

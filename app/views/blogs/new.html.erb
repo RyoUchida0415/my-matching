@@ -6,9 +6,22 @@
 
 <div class="col-md-9">
 	<h2>ブログ投稿</h2>
+	<p>なるべく多くの投稿をすることにより他の会員へのアピールにつながります！</p>
 	<hr>
 	<%= form_for(@blog) do |f| %>
-	<%=f.text_area :blog ,:placeholder => "今日はいい天気なので散歩しました" , :size => 500 %>
+	<!--エラーメッセージ-->
+      <% if @blog.errors.any? %>
+        <div id=error_explanation>
+          <p><%= @blog.errors.count %> error prihibited this book from being saved:</p>
+        <ul>
+          <% @blog.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+	<%=f.text_area :blog ,:placeholder => "今日はいい天気なので散歩しました" , size: "100x10" %>
 	<%= f.submit '投稿する' ,class: "btn btn-info"%>
 	<% end %>
 </div>
