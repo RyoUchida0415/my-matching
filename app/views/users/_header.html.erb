@@ -4,6 +4,10 @@
       <h1>my-matching</h1>
       <% end %>
   </div>
+
+  <div id="sp-menu">
+      <h3>　　　MENU</h3>
+      <ul>
 	<!--ログインしたとき-->
 	<% if user_signed_in? %>
 	<ul class="nav navbar-nav navbar-right" >
@@ -23,6 +27,8 @@
 			<%= link_to 'ログアウト', destroy_user_session_path, method: :delete , data: {"turbolinks" => false}%>
 		</li>
 	</ul>
+ </ul>
+    </div>
 
 	<% else %>
 
@@ -39,4 +45,14 @@
 		</li>
 	</ul>
 	<% end %>
+
+    <div id="hm-icon">
+      <a class="menu-trigger" href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+    </div>
+
+
 </header>

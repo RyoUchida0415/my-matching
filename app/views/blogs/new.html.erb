@@ -12,12 +12,9 @@
 	<!--エラーメッセージ-->
       <% if @blog.errors.any? %>
         <div id=error_explanation>
-          <p><%= @blog.errors.count %> error prihibited this book from being saved:</p>
-        <ul>
           <% @blog.errors.full_messages.each do |message| %>
             <li><%= message %></li>
           <% end %>
-        </ul>
       </div>
     <% end %>
 

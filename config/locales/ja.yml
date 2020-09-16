@@ -1,0 +1,19 @@
+#エラーメッセージの日本語化
+
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      blog: ブログ
+    attributes:
+      user:
+        nickname: ニックネーム
+        email: メールアドレス
+        age: 年齢
+        prefecture: 都道府県
+        sex: 性別
+        introduction: 自己紹介文
+        image: プロフィール画像
+        password: パスワード
+      blog:
+        blog: ブログ

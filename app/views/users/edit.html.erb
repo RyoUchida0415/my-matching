@@ -12,10 +12,8 @@
       <!--エラーメッセージ-->
       <% if @user.errors.any? %>
         <div id=error_explanation>
-          <p><%= @user.errors.count %> error prihibited this book from being saved:</p>
-        <ul>
           <% @user.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
+            <div><%= message %></div>
           <% end %>
         </ul>
       </div>

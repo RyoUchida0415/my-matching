@@ -26,8 +26,8 @@
     <%= f.select :prefecture, User.prefectures.keys,{} %>
   </div>
 <br />
-  <div>
     <%= f.label :性別 %>
+    <div>
     <label><%= f.radio_button :sex, "true" %>男性</label>
     <label><%= f.radio_button :sex, "false" %>女性</label>
   </div>
