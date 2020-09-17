@@ -3,56 +3,56 @@
 	  <%= link_to root_path , data: {"turbolinks" => false} do %>
       <h1>my-matching</h1>
       <% end %>
-  </div>
+  	</div>
 
-  <div id="sp-menu">
-      <h3>　　　MENU</h3>
-      <ul>
-	<!--ログインしたとき-->
-	<% if user_signed_in? %>
-	<ul class="nav navbar-nav navbar-right" >
-		<li class="aikonn">
-			<%= link_to 'about', homes_about_path %>
-		</li>
-		<li class="aikonn">
-			<%= link_to 'マイページ', user_path(current_user) %>
-		</li>
-		<li class="aikonn">
-			<%= link_to 'ブログ投稿', new_blog_path %>
-		</li>
-		<li class="aikonn">
-			<%= link_to '会員一覧', users_path %>
-		</li>
-		<li class="aikonn">
-			<%= link_to 'ログアウト', destroy_user_session_path, method: :delete , data: {"turbolinks" => false}%>
-		</li>
-	</ul>
- </ul>
+  	<div id="sp-menu">
+      	<h3>　　　MENU</h3>
+      	<hr>
+      	<ul>
+			<!--ログインしたとき-->
+			<% if user_signed_in? %>
+				<ul class="nav navbar-nav navbar-right" >
+					<li class="aikonn">
+						<%= link_to 'about', homes_about_path %>
+					</li>
+					<li class="aikonn">
+						<%= link_to 'マイページ', user_path(current_user) %>
+					</li>
+					<li class="aikonn">
+						<%= link_to 'ブログ投稿', new_blog_path %>
+					</li>
+					<li class="aikonn">
+						<%= link_to '会員一覧', users_path %>
+					</li>
+					<li class="aikonn">
+						<%= link_to 'ログアウト', destroy_user_session_path, method: :delete , data: {"turbolinks" => false}%>
+					</li>
+				</ul>
+
+			<!--ログインしていないとき-->
+			<% else %>
+				<ul class="nav navbar-nav navbar-right" >
+					<li class="aikonn">
+						<%= link_to 'about', homes_about_path %>
+					</li>
+					<li class="aikonn">
+						<%= link_to 'ログイン',  new_user_session_path %>
+					</li>
+					<li class="aikonn">
+						<%= link_to '新規登録', new_user_registration_path %>
+					</li>
+				</ul>
+			<% end %>
+ 		</ul>
     </div>
 
-	<% else %>
 
-	<!--ログインしていないとき-->
-	<ul class="nav navbar-nav navbar-right" >
-		<li class="aikonn">
-			<%= link_to 'about', homes_about_path %>
-		</li>
-		<li class="aikonn">
-			<%= link_to 'ログイン',  new_user_session_path %>
-		</li>
-		<li class="aikonn">
-			<%= link_to '新規登録', new_user_registration_path %>
-		</li>
-	</ul>
-	<% end %>
-
-    <div id="hm-icon">
-      <a class="menu-trigger" href="#">
-        <span></span>
-        <span></span>
-        <span></span>
-      </a>
+	<div id="hm-icon">
+      	<a class="menu-trigger" href="#">
+        	<span></span>
+        	<span></span>
+        	<span></span>
+      	</a>
     </div>
-
 
 </header>

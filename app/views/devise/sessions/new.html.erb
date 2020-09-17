@@ -1,5 +1,6 @@
 <%= render 'users/header' %>
 <div class="login-body">
+  <br>
   <h2>ログイン</h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -20,6 +21,10 @@
     </div>
   <% end %>
   <br>
+  <div>
     <%= link_to "topに戻る", root_path ,class: 'btn btn-primary' , data: {"turbolinks" => false}%>
-
+  </div>
+  <br>
 </div>
+
+<%= render 'users/footer' %>

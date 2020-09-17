@@ -18,6 +18,12 @@
 @import "bootstrap";            /*ここを追加*/
 
 
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 header{
     position:relative;
 	background-color: #EEEEEE;
@@ -52,7 +58,7 @@ header{
   position: fixed;
   right: 20px;
   top: 20px;
-  z-index: 10;
+  z-index: 22;
 }
 .menu-trigger,
 .menu-trigger span {
@@ -64,6 +70,7 @@ header{
   position: relative;
   width: 50px;
   height: 44px;
+  z-index: 20;
 }
 .menu-trigger span {
   position: absolute;
@@ -102,12 +109,12 @@ header{
   position: fixed;
   top: 0;
   right: 0;
-  background: #EEFFFF;
+  background-color: #EEFFFF;
   color: black;
   width: 20%;
   min-height: 100%;
   display: none;
-  z-index: 9;
+  z-index: 11;
   border-left: 2px solid #DDDDDD;
 
 }
@@ -117,4 +124,11 @@ header{
 }
 #sp-menu a{
   color: black;
+}
+
+footer{
+  background-color: #EEEEEE;
+  height: 70px;
+  text-align: center;
+
 }

@@ -1,5 +1,6 @@
 <%= render 'users/header' %>
 
+<div class="main clearfix">
 <div class="col-md-3">
 	<%= render 'users/sidebar', user: current_user %>
 </div>
@@ -7,6 +8,10 @@
 <div class="col-md-9">
 	<h2>会員一覧</h2>
 	<hr>
+
+	<%= flash[:success] %>
+  	<%= flash[:danger] %>
+
 		<% @users.each do |user| %>
 		<div class="one-user">
 			<%= link_to user_path(user) do %>
@@ -21,3 +26,6 @@
 		</div>
 		<% end %>
 </div>
+</div>
+
+<%= render 'users/footer' %>

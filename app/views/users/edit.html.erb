@@ -1,5 +1,6 @@
 <%= render 'users/header' %>
 
+<div class="main clearfix">
 <div class="col-md-3">
 	<%= render 'users/sidebar', user: current_user %>
 </div>
@@ -45,3 +46,6 @@
   <% end %>
 
 </div>
+</div>
+
+<%= render 'users/footer' %>

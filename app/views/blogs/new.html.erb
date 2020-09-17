@@ -1,5 +1,6 @@
 <%= render 'users/header' %>
 
+<div class="main clearfix">
 <div class="col-md-3">
 	<%= render 'users/sidebar', user: current_user %>
 </div>
@@ -13,7 +14,7 @@
       <% if @blog.errors.any? %>
         <div id=error_explanation>
           <% @blog.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
+            <%= message %>
           <% end %>
       </div>
     <% end %>
@@ -22,3 +23,5 @@
 	<%= f.submit '投稿する' ,class: "btn btn-info"%>
 	<% end %>
 </div>
+</div>
+<%= render 'users/footer' %>

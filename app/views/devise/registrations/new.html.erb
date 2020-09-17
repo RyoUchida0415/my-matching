@@ -1,6 +1,7 @@
 <%= render 'users/header' %>
 
 <div class="login-body">
+  <br>
   <h2>新規登録</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -28,8 +29,8 @@
 <br />
     <%= f.label :性別 %>
     <div>
-    <label><%= f.radio_button :sex, "true" %>男性</label>
-    <label><%= f.radio_button :sex, "false" %>女性</label>
+    <label><%= f.radio_button :sex, :"true" %>男性</label>
+    <label><%= f.radio_button :sex, :"false" %>女性</label>
   </div>
 <br />
   <div>
@@ -59,5 +60,10 @@
   <% end %>
 
   <br>
+  <div>
   <%= link_to "topに戻る", root_path ,class: 'btn btn-primary' , data: {"turbolinks" => false}%>
 </div>
+<br>
+</div>
+
+<%= render 'users/footer' %>

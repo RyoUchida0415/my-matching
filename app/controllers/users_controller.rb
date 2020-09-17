@@ -48,10 +48,18 @@ class UsersController < ApplicationController
       def update
         @user = User.find(params[:id])
         if @user.update(user_params)
+        flash[:success] = '会員情報が更新されました！'
         redirect_to user_path(current_user.id)
         else
+        flash[:danger] = 'お客様の情報を更新出来ませんでした。空欄の箇所はありませんか？'
         render 'edit'
     end
+    end
+
+    def destroy
+      @user = User.find(params[:id])
+      @user.destroy
+      redirect_to :root
     end
 
     private
