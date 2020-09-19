@@ -77,3 +77,9 @@ gem "jquery-rails"
 
 #エラーメッセージの日本語化
 gem 'rails-i18n'
+
+#デプロイ
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
