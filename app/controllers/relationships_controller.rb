@@ -21,7 +21,7 @@ class RelationshipsController < ApplicationController
 
   #相互フォローでマッチング成立
   def match
-    follower & followed
+    @users = follower & followed
   end
 
 end

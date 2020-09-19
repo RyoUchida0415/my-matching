@@ -19,7 +19,7 @@
 //= require_tree .
 
 //top画面のスライドショー
-$(document).ready(function () {
+$(document).on('turbolinks:load', function() {
   $("#theTarget").skippr({
     // スライドショーの変化 ("fade" or "slide")
     transition : 'fade',
@@ -44,3 +44,11 @@ $(document).ready(function () {
   });
 });
 
+//ヘッダーのハンバーガーメニュー
+$(document).on('turbolinks:load', function() {
+  $('.menu-trigger').on('click', function(event) {
+    $(this).toggleClass('active');
+    $('#sp-menu').fadeToggle();
+    event.preventDefault();
+  });
+});

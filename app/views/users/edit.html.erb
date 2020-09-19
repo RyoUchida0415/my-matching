@@ -1,2 +1,51 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<%= render 'users/header' %>
+
+<div class="main clearfix">
+<div class="col-md-3">
+	<%= render 'users/sidebar', user: current_user %>
+</div>
+
+<div class="col-md-9">
+	<h2>プロフィール編集</h2>
+	<p>年齢・性別の変更はできません</p>
+	<hr>
+	  <%= form_for(@user) do |f| %>
+      <!--エラーメッセージ-->
+      <% if @user.errors.any? %>
+        <div id=error_explanation>
+          <% @user.errors.full_messages.each do |message| %>
+            <div><%= message %></div>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+<div>
+    <%= f.label :ニックネーム %><br />
+    <%= f.text_field :nickname, autofocus: true %>
+  </div>
+
+  <div>
+    <%= f.label :都道府県 %><br />
+    <%= f.select :prefecture, User.prefectures.keys,{} %>
+  </div>
+
+  <div>
+    <%= f.label :自己紹介文 %><br />
+    <%= f.text_area :introduction, size: "50x3",autofocus: true %>
+  </div>
+
+  <div>
+    <%= f.label :プロフィール画像 %><br />
+    <%= f.attachment_field :image, style: "display: inline;" %>
+  </div>
+	<br>
+  <div>
+    <%= f.submit "変更を保存する" ,class: "btn btn-info"%>
+  </div>
+  <% end %>
+
+</div>
+</div>
+
+<%= render 'users/footer' %>

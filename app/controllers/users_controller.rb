@@ -38,9 +38,32 @@ class UsersController < ApplicationController
     end
   end
 
-      def edit
-      end
-
-      def update
+    def edit
+      @user = User.find(params[:id])
+      if @user != current_user
+      redirect_to user_path(current_user.id)
       end
     end
+
+      def update
+        @user = User.find(params[:id])
+        if @user.update(user_params)
+        flash[:success] = '会員情報が更新されました！'
+        redirect_to user_path(current_user.id)
+        else
+        flash[:danger] = 'お客様の情報を更新出来ませんでした。空欄の箇所はありませんか？'
+        render 'edit'
+    end
+    end
+
+    def destroy
+      @user = User.find(params[:id])
+      @user.destroy
+      redirect_to :root
+    end
+
+    private
+      def user_params
+        params.require(:user).permit(:nickname, :prefecture, :introduction, :image)
+      end
+end

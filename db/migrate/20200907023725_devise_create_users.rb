@@ -35,7 +35,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :nickname
       t.integer :age
       t.integer :prefecture
-      t.boolean :sex
+      t.boolean :sex, default: true
       t.string :image_id
       t.text :introduction
 

@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :following_user, through: :follower, source: :followed
   # 自分をフォローしている人
   has_many :follower_user, through: :followed, source: :follower
+
   #メッセージ機能
   has_many :messages, dependent: :destroy
   has_many :entries, dependent: :destroy
@@ -31,10 +32,6 @@ class User < ApplicationRecord
     following_user.include?(user)
   end
 
-  #相互フォローでマッチング成立
-  def match
-    follower & followed
-  end
 
   enum prefecture:{
     "選択してください":0,
@@ -52,4 +49,5 @@ class User < ApplicationRecord
     "20":1,"21":2,"22":3,"23":4,"24":5,"25":6,"26":7,"27":8,"28":9,"29":10,"30":11,"31":12,"32":13,"33":14,"34":15,"35":16,"36":17,"37":18,"38":19,"39":20,"40":21,"41":22,"42":23,"45":24,"46":25,"47":26,"48":27,"49":28,"50":29
   }
 
+  validates :nickname, :email, :age, :prefecture, :introduction, presence: true
 end
