@@ -34,3 +34,9 @@
 .one-user{
 	height:150px;
 }
+.table-zero-padding > thead > tr > th, .table-zero-padding > thead > tr > td, .table-zero-padding > tbody > tr > th, .table-zero-padding > tbody > tr > td, .table-zero-padding > tfoot > tr > th, .table-zero-padding > tfoot > tr > td {
+	padding: 10px 0px;
+    line-height: 1.428571429;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
