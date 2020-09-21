@@ -21,13 +21,8 @@ module MyMatching
     config.i18n.default_locale = :ja
     #エラーメッセージのカラム名の日本語化
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml').to_s]
+    #東京時間の表示
+    config.time_zone ='Tokyo'
 
 end
-end
-
-#東京時間の表示
-module Hoge
-	class Apilication < Rails::Application
-		config.time_zone ='Tokyo'
-	end
 end
