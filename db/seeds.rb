@@ -8,7 +8,7 @@ User.create!(
       sex:'true',
       introduction:'よろしく',
       image: File.open('./app/assets/images/man1.jpg'),
-      password:'111111',
+      password:'111111'
       },
       {
       nickname:'みーちゃん',
@@ -18,7 +18,7 @@ User.create!(
       sex:'false',
       introduction:'よろしく',
       image: File.open('./app/assets/images/woman1.jpg'),
-      password:'222222',
+      password:'222222'
       },
       {
       nickname:'亜希子',
@@ -28,7 +28,7 @@ User.create!(
       sex:'false',
       introduction:'よろしく',
       image: File.open('./app/assets/images/woman2.jpg'),
-      password:'333333',
+      password:'333333'
       },
       {
       nickname:'和夫',
@@ -38,7 +38,7 @@ User.create!(
       sex:'true',
       introduction:'よろしく',
       image: File.open('./app/assets/images/man2.jpg'),
-      password:'444444',
+      password:'444444'
       },
       {
       nickname:'みな',
@@ -48,7 +48,7 @@ User.create!(
       sex:'false',
       introduction:'よろしく',
       image: File.open('./app/assets/images/woman3.jpg'),
-      password:'555555',
+      password:'555555'
       },
       {
       nickname:'ジニー',
@@ -58,7 +58,7 @@ User.create!(
       sex:'true',
       introduction:'よろしく',
       image: File.open('./app/assets/images/man3.jpg'),
-      password:'666666',
+      password:'666666'
       }
    ]
 )

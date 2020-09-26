@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   def index
       #ログインしているユーザーの性別がtrue（男性）ならば（boolean型なのでtrueとわざわざ記述する必要なし）
       if current_user.sex
