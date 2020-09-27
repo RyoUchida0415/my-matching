@@ -25,18 +25,24 @@
       </tr>
       <tr>
         <td>
+          <div class="button">
             <%= link_to "マッチング成立", user_matches_path(user), class: 'btn btn-success'%>
+          </div>
         </td>
       </tr>
       <tr>
         <td>
+           <div class="button">
             <%= link_to "フォロー" , user_follows_path(user), class: 'btn btn-info' %>
+          </div>
         </td>
       </tr>
       <tr>
         <td>
-          <%= link_to "フォロワー", user_followers_path(user), class: 'btn btn-primary'%>
-            </td>
+           <div class="button">
+            <%= link_to "フォロワー", user_followers_path(user), class: 'btn btn-primary'%>
+          </div>
+        </td>
       </tr>
     </table>
 </div>

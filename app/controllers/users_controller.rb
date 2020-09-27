@@ -4,11 +4,11 @@ class UsersController < ApplicationController
       #ログインしているユーザーの性別がtrue（男性）ならば（boolean型なのでtrueとわざわざ記述する必要なし）
       if current_user.sex
         #全ての女性会員を表示
-        @users = User.where(sex: false)
+        @users = User.where(sex: false).page(params[:page]).reverse_order
       #ログインしているユーザーの性別がfalse（女性）ならば
       else
         #全ての男性会員を表示
-        @users = User.where(sex: true)
+        @users = User.where(sex: true).page(params[:page]).reverse_order
       end
   end
 
