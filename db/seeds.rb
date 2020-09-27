@@ -59,6 +59,36 @@ User.create!(
       introduction:'よろしく',
       image: File.open('./app/assets/images/man3.jpg'),
       password:'666666'
+      },
+      {
+      nickname:'のりえ',
+      email:'7@7',
+      age:'28',
+      prefecture:'滋賀県',
+      sex:'false',
+      introduction:'よろしく',
+      image: File.open('./app/assets/images/woman4.jpg'),
+      password:'777777'
+      },
+      {
+      nickname:'なぎさ',
+      email:'8@8',
+      age:'24',
+      prefecture:'大阪府',
+      sex:'false',
+      introduction:'よろしく',
+      image: File.open('./app/assets/images/woman5.jpg'),
+      password:'888888'
+      },
+      {
+      nickname:'あかり',
+      email:'9@9',
+      age:'24',
+      prefecture:'京都府',
+      sex:'false',
+      introduction:'よろしく',
+      image: File.open('./app/assets/images/woman6.jpg'),
+      password:'999999'
       }
    ]
 )

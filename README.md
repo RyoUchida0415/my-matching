@@ -16,7 +16,7 @@
 恋愛をしたい時
 
 ## 設計書
-### WBShttps://docs.google.com/spreadsheets/d/14cLo2095D1T4sj0Wzz-s8v5lSxsm4b8sxxv1uVFkhfo/edit#gid=977420151
+### WBS https://docs.google.com/spreadsheets/d/14cLo2095D1T4sj0Wzz-s8v5lSxsm4b8sxxv1uVFkhfo/edit#gid=977420151
 ### 画面遷移図https://app.diagrams.net/#G1Kfw5IcmRYWMwx15eVxwxE0BBBQMpnw3L
 ### ワイヤーフレームhttps://app.diagrams.net/#G1Vmgi1kfdrobPVoi7p1J-UCmvNyqmz7xq
 ### ER図https://app.diagrams.net/#G1PwMBMaZAXfe8pTUl8HTAwm32b9547i4l
