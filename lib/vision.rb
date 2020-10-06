@@ -4,7 +4,7 @@ require 'net/https'
 
 module Vision
   class << self
-    def image_analysis(image_file)
+    def valid_image?(image_file)
       # APIのURL作成
       api_url = "https://vision.googleapis.com/v1/images:annotate?key=#{ENV['GOOGLE_API_KEY']}"
 
@@ -40,7 +40,6 @@ module Vision
       medical = JSON.parse(response.body)['responses'][0]['safeSearchAnnotation']['medical']
       racy  = JSON.parse(response.body)['responses'][0]['safeSearchAnnotation']['racy']
       if violence == 'LIKELY' || violence == 'VERY_LIKELY' || adult == 'LIKELY' || adult == 'VERY_LIKELY' || spoof == 'LIKELY' || spoof == 'VERY_LIKELY' || medical == 'LIKELY' || medical == 'VERY_LIKELY' || racy == 'LIKELY' || racy == 'VERY_LIKELY'
-        byebug
         return false
       else
         return true
