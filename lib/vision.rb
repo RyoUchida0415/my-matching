@@ -4,7 +4,7 @@ require 'net/https'
 
 module Vision
   class << self
-    def image_analysis(image_file)
+    def valid_image?(image_file)
       # APIのURL作成
       api_url = "https://vision.googleapis.com/v1/images:annotate?key=#{ENV['GOOGLE_API_KEY']}"
 
