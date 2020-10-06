@@ -40,7 +40,6 @@ module Vision
       medical = JSON.parse(response.body)['responses'][0]['safeSearchAnnotation']['medical']
       racy  = JSON.parse(response.body)['responses'][0]['safeSearchAnnotation']['racy']
       if violence == 'LIKELY' || violence == 'VERY_LIKELY' || adult == 'LIKELY' || adult == 'VERY_LIKELY' || spoof == 'LIKELY' || spoof == 'VERY_LIKELY' || medical == 'LIKELY' || medical == 'VERY_LIKELY' || racy == 'LIKELY' || racy == 'VERY_LIKELY'
-        byebug
         return false
       else
         return true
