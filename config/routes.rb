@@ -3,8 +3,13 @@ Rails.application.routes.draw do
 	get 'homes/top'
 	get 'homes/about'
 
-	devise_for :users
-	resources :users do
+	devise_for :users, :controllers => {
+   		:registrations => 'users/registrations',
+   		#:sessions => 'users/sessions',
+   		#:passwords => 'users/passwords'
+  	}
+
+	resources :users, only: [:index, :show, :edit, :update, :destroy] do
 		resource :relationships, only: [:create, :destroy]
 		get 'follows' => 'relationships#follower', as: 'follows'
 		get 'followers' => 'relationships#followed', as: 'followers'

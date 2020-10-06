@@ -91,3 +91,6 @@ end
 
 #ページング
 gem 'kaminari','~> 1.2.1'
+
+#外部API
+gem 'dotenv-rails'

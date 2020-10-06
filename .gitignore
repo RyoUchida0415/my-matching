@@ -31,3 +31,5 @@
 /config/master.key
 
 /.env
+
+GOOGLE_API_KEY="AIzaSyDrFcrnjyO5nzumf1R2ihtORqfCGIM_-5Y"
