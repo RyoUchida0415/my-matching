@@ -1,0 +1,15 @@
+<h1>会員詳細</h1>
+<%= attachment_image_tag @user, :image,format:'jpeg', fallback: "no_image.jpg", size:'300x300'  %>
+<%= @user.nickname %>
+<%= @user.email %>
+<%= @user.age %>
+<%= @user.prefecture %>
+<%= @user.sex %>
+<%= @user.introduction %>
+<% @blogs.each do |blog| %>
+	<div>
+		<%= blog.created_at.strftime('%Y/%m/%d　%H:%M:%S') %>
+		<%= blog.blog %>
+	</div>
+<% end %>
+<%= link_to '会員一覧へ', admins_users_path %>

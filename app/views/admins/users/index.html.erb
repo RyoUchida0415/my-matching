@@ -1,0 +1,15 @@
+<h1>会員一覧</h1>
+	<% @users.each do |user| %>
+		<div class="one-user">
+			<%= link_to admins_user_path(user) do %>
+				<%= attachment_image_tag user, :image,format:'jpeg', fallback: "no_image.jpg", size:'100x100'  %>
+				<% end %>
+				<%= user.nickname %>
+				<%= user.email %>
+				<%= user.age %>
+				<%= user.prefecture %>
+				<%= user.sex %>
+				<%= user.introduction %>
+		</div>
+	<% end %>
+<%= link_to '管理者ログアウト', destroy_admins_admin_session_path, method: :delete , data: {"turbolinks" => false}%>

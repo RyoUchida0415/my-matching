@@ -92,3 +92,8 @@ User.create!(
       }
    ]
 )
+Admin.create!(
+      nickname: '管理者',
+      email: 'admin@admin',
+      password: 'adminadmin'
+)
