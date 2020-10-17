@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  namespace :admins do
+    get 'users/index'
+    get 'users/show'
+  end
+  namespace :admin do
+    get 'users/index'
+    get 'users/show'
+  end
+  get 'users/index'
+  get 'users/show'
 	get 'homes/top'
 	get 'homes/about'
 
@@ -20,4 +30,10 @@ Rails.application.routes.draw do
 
 	resources :messages, :only => [:create]
 	resources :rooms, :only => [:create, :show, :index]
+
+	namespace :admins do
+		devise_for :admins
+		resources :blogs, :only => [:index, :show]
+		resources :users, :only => [:index, :show]
+	end
 end
