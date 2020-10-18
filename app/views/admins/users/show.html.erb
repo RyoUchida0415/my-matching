@@ -13,5 +13,12 @@
 	</div>
 <% end %>
 
+<% @messages.each do |message| %>
+	<div>
+		<%= message.created_at.strftime('%Y/%m/%d　%H:%M:%S') %>
+		<%= message.content %>
+	</div>
+<% end %>
+
 <%= link_to "強制退会させる", admins_user_path(@user.id), method: :delete ,"data-confirm"=>"本当に削除しますか？" %>
 <%= link_to '会員一覧へ', admins_users_path %>
