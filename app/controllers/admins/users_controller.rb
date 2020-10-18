@@ -6,6 +6,7 @@ class Admins::UsersController < ApplicationController
   def show
   	@user = User.find(params[:id])
   	@blogs = Blog.where(user_id: @user.id)
+  	@messages = Message.where(user_id: @user.id)
   end
 
   def destroy
