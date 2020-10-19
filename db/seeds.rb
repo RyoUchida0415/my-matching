@@ -86,7 +86,7 @@ User.create!(
       age:'24',
       prefecture:'京都府',
       sex:'false',
-      introduction:'よろしくです。プロフィール画像出典：ぱくたそ （https://www.pakutaso.com/）',
+      introduction:'よろしくです!プロフィール画像出典：ぱくたそ （https://www.pakutaso.com/）',
       image: File.open('./app/assets/images/woman6.jpg'),
       password:'999999'
       }
