@@ -20,5 +20,5 @@
 	</div>
 <% end %>
 
-<%= link_to "強制退会させる", admins_user_path(@user.id), method: :delete ,"data-confirm"=>"本当に削除しますか？" %>
-<%= link_to '会員一覧へ', admins_users_path %>
+<%= link_to "強制退会させる", admins_user_path(@user.id), method: :delete ,"data-confirm"=>"本当に削除しますか？" , class: 'btn btn-success'%>
+<%= link_to '会員一覧へ', admins_users_path, class: 'btn btn-info' %>
