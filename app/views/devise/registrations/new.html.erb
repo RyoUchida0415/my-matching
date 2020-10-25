@@ -21,12 +21,12 @@
 
   <div>
     <%= f.label :年齢 %><p>(本アプリは２０〜５０歳までが対象です)</p>
-    <%= f.select :age, User.ages.keys,{} %>
+    <%= f.select :age, User.ages.keys,{ include_blank: '選択してください' } %>
   </div>
 <br />
   <div>
     <%= f.label :都道府県 %><p>(後から変更可能です)</p>
-    <%= f.select :prefecture, User.prefectures.keys,{} %>
+    <%= f.select :prefecture, User.prefectures.keys,{ include_blank: '選択してください'} %>
   </div>
 <br />
     <%= f.label :性別 %>
