@@ -16,17 +16,24 @@ class Users::RegistrationsController < Devise::RegistrationsController
       if user.image.present?
           # Cloud Vision APIで画像分析して、分析結果を変数に代入
           if Vision.valid_image?(user.image)
-            user.save
-            sign_up('user', user)
-            redirect_to users_path
+            if user.save
+              sign_up('user', user)
+              redirect_to users_path
+            else
+              redirect_to new_user_registration_path
+            end
           else
             flash[:danger] = '画像が不適切です'
             redirect_to new_user_registration_path
           end
       # 画像が投稿されてない場合
       else
-          user.save
-          redirect_to users_path
+          if user.save
+             sign_up('user', user)
+             redirect_to users_path
+          else
+             redirect_to new_user_registration_path
+          end
       end
    end
 
