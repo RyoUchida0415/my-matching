@@ -23,7 +23,7 @@
 ### テーブル定義書https://docs.google.com/spreadsheets/d/1j59IlRbcGAIgjx-c-M7q3g4HVZWAqQGc/edit#gid=1243549839
 
 ## 機能一覧
-### チャレンジ機能一覧https://docs.google.com/spreadsheets/d/1Tti0FeH0R7T156df881sY20t1Lqaj-UDgOV0kcEvvNc/edit#gid=0 
+・ログイン機能・管理者画面・画像投稿機能・マッチング機能・ダイレクトメッセージ機能・ハンバーガーメニュー・画像スライド・フォロー機能・不適切画像判別機能
 ## 開発環境
 * OS：Linux(CentOS)
 * 言語：HTML,CSS,JavaScript,Ruby,SQL
