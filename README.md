@@ -23,7 +23,7 @@
 ### テーブル定義書https://docs.google.com/spreadsheets/d/1j59IlRbcGAIgjx-c-M7q3g4HVZWAqQGc/edit#gid=1243549839
 
 ## 機能一覧
-・ログイン機能・管理者画面・画像投稿機能・マッチング機能・ダイレクトメッセージ機能・ハンバーガーメニュー・画像スライド・フォロー機能・不適切画像判別機能・バリデーション機能・ページング機能
+・ログイン機能・管理者画面・画像投稿機能・マッチング機能・ダイレクトメッセージ機能・ハンバーガーメニュー・画像スライド・フォロー機能・不適切画像判別機能(Google Cloud Vision API)・バリデーション機能・ページング機能・レスポンシブ対応
 ## 開発環境
 * OS：Linux(CentOS)
 * 言語：HTML,CSS,JavaScript,Ruby,SQL
