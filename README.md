@@ -29,6 +29,7 @@ https://docs.google.com/spreadsheets/d/1j59IlRbcGAIgjx-c-M7q3g4HVZWAqQGc/edit#gi
 
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1Tti0FeH0R7T156df881sY20t1Lqaj-UDgOV0kcEvvNc/edit#gid=0
+
 - ログイン機能
 - 管理者画面
 - 画像投稿機能
