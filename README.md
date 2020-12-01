@@ -48,3 +48,4 @@ https://docs.google.com/spreadsheets/d/1Tti0FeH0R7T156df881sY20t1Lqaj-UDgOV0kcEv
 * フレームワーク：Ruby on Rails
 * JSライブラリ：jQuery
 * 仮想環境：Vagrant,VirtualBox
+* API：Google Cloud Vision API
