@@ -42,6 +42,7 @@ https://docs.google.com/spreadsheets/d/1Tti0FeH0R7T156df881sY20t1Lqaj-UDgOV0kcEv
 - バリデーション機能
 - ページング機能
 - レスポンシブ対応
+
 ## 開発環境
 * OS：Linux(CentOS)
 * 言語：HTML,CSS,JavaScript,Ruby,SQL
@@ -49,3 +50,4 @@ https://docs.google.com/spreadsheets/d/1Tti0FeH0R7T156df881sY20t1Lqaj-UDgOV0kcEv
 * JSライブラリ：jQuery
 * 仮想環境：Vagrant,VirtualBox
 * API：Google Cloud Vision API
+* デプロイ：AWS
